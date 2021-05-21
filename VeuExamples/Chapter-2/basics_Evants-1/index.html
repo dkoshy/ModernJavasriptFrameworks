@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Events</h1>
+    </header>
+    <section id="events">
+      <h2>Events in Action</h2>
+      <!-- <button v-on:click="counter++">Add</button>
+      <button v-on:click="couter--">Remove</button> -->
+      <button v-on:click="onIncrement">Add</button>
+      <button v-on:click.middle="onDecrement(5)">Subtract 5</button>
+      <p v-once>Initial Counter: {{ counter }}</p>
+      <p>Result: {{ counter }}</p>
+      <!-- <input type="text" name="developer_name" v-on:input="onDataEnter"
+      v-on:keyUp.enter="onEnter"> -->
+        <!-- Two way binding Example -->
+      <!-- <input type="text" name="developer_name" v-bind:value="name"  v-on:input="onDataEnter"
+      v-on:keyUp.enter="onEnter"> -->
+
+      <input type="text" name="developer_name" v-model="name"
+      v-on:keyUp.enter="onEnter">
+
+      <!-- <input type="text" v-model="name" v-on:keyUp.enter="onEnter" >  -->
+    
+      <p>{{ fullname }}</p>
+      <p>{{ confirmedName }}</p>
+       <form v-on:submit.prevent="onFormSubmitted">
+         <input type="text">
+         <button>Submit</button>
+       </form>
+    </section>
+  </body>
+</html>
